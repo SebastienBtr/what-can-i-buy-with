@@ -2,6 +2,21 @@
 
 var db = require('../db.js');
 
+module.exports.findAll = function (success, error) {
+
+    var query = 'SELECT * FROM product';
+
+    db.connection.query(query, function (err, rows) {
+
+        if (!err) {
+            success(rows);
+        } else {
+            console.error(err);
+            error(err);
+        }
+    });
+};
+
 module.exports.findById = function (id, success, error) {
 
     var query = 'SELECT * FROM product WHERE id = ?';

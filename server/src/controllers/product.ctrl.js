@@ -5,8 +5,8 @@ let productService = require('../services/product.srv.js');
 
 router.get('/products', (req, res) => {
 
-    productService.findById(id, (product) => {
-        res.send(product);
+    productService.findAll( (products) => {
+        res.send(products);
 
     }, (error) => {
         console.error(error);

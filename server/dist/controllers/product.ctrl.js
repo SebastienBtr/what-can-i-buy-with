@@ -5,6 +5,17 @@ var router = express.Router();
 
 var productService = require('../services/product.srv.js');
 
+router.get('/products', function (req, res) {
+
+    productService.findAll(function (products) {
+        res.send(products);
+    }, function (error) {
+        console.error(error);
+        res.statusCode = 401;
+        res.send({ errorCode: 'Error SQL when searching products' });
+    });
+});
+
 router.get('/product/:id', function (req, res) {
 
     var id = req.params.id;
