@@ -1,6 +1,6 @@
 # WebStorm
 
-.idea/
+.idea/*
 *.iml
 *.iws
 
