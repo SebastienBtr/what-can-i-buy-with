@@ -1,0 +1,51 @@
+'use strict';
+
+var app = require('express')();
+var conf = require('./config.js');
+var dbParams = conf.get('db');
+var db = require('./db.js');
+var mysql = require('mysql');
+
+var productController = require('./controllers/product.ctrl.js');
+
+// all of our routes will be prefixed with /api
+app.use('/api', [productController]);
+
+function dbConnection() {
+
+    var objConn = mysql.createConnection({
+        host: dbParams.host,
+        user: dbParams.user,
+        password: dbParams.password,
+        database: dbParams.database
+    });
+
+    objConn.connect(function (err) {
+
+        if (err) {
+            console.error('error when connecting to db:', err.code);
+            setTimeout(dbConnection, dbParams.timeoutBeforeReconnection); // We introduce a delay before attempting to reconnect
+        } else {
+            console.info('Connected to db !');
+            db.connection = objConn;
+        }
+    });
+
+    objConn.on('error', function (err) {
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+            // Connection to the MySQL server is usually lost
+            dbConnection();
+        } else {
+            throw err;
+        }
+    });
+}
+
+dbConnection();
+
+var port = conf.get('server').port;
+
+app.listen(port, function () {
+    console.log('app listening on port ' + port);
+});
+//# sourceMappingURL=index.js.map
