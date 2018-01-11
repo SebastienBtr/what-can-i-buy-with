@@ -60,7 +60,7 @@ Finally create your watcher :
 
 ##### For the client (client/whatCanIBuyWith/)
 
-This part use angular cli so to run it you just have to use ```ng serve``` (see the official documentation for others commands)
+This part use angular cli so to run it you just have to use ```ng serve``` (see the official documentation for other commands)
 
 ##### For the server (server/)
 
