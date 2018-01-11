@@ -1,1 +1,23 @@
-<pre>{{ products | json }}</pre>
+<form [formGroup]="priceForm">
+  <div>
+    <input type="text" formControlName="price">
+  </div>
+</form>
+
+<div *ngIf="productsSelected.length > 0; else empty">
+  <h2>With ${{ priceSelected}} you can buy</h2>
+    <ul>
+      <li *ngFor="let product of productsSelected">
+
+        <img src="{{ product.imageUrl }}">
+        {{ (priceSelected / product.price) | number : '1.0-0' }} {{ product.name }}
+
+      </li>
+    </ul>
+</div>
+
+<ng-template #empty>
+  <h2>Sorry... you don't have enough money to buy something</h2>
+</ng-template>
+
+
