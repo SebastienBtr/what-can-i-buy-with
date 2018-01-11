@@ -64,6 +64,6 @@ This part use angular cli so to run it you just have to use ```ng serve``` (see 
 
 ##### For the client (client/whatCanIBuyWith)
 
-To run the server just use ```npm run start```  
+To run the server use ```npm run start``` or use ```npm run watcherStart``` if you want that the server restart automaticly when a file change 
 
 ## Test
