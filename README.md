@@ -1,4 +1,4 @@
-# what-can-i-buy-with
+# what can I buy with
 
 ## Description
 
@@ -50,11 +50,10 @@ Finally create your watcher :
 
 &nbsp;&nbsp;&nbsp;Create a babel watcher, choose our "source" scope for the scope;  
 &nbsp;&nbsp;&nbsp;Select the Babel "program" in your system (/usr/local/bin/babel for linux)  
-&nbsp;&nbsp;&nbsp;In "Arguments" write :  ```$FileDirRelativeToProjectRoot$ --source-maps --out-dir server/dist/$FileDirPathFromParent(src)$```  
+&nbsp;&nbsp;&nbsp;In "Arguments" write :  
+```$FileDirRelativeToProjectRoot$ --source-maps --out-dir server/dist/$FileDirPathFromParent(src)$```  
 &nbsp;&nbsp;&nbsp;The "output paths to refresh" is : ```server/dist```  
 &nbsp;&nbsp;&nbsp;The "working directory" is : ```$ProjectFileDir$```
-
-* To run the server just use ```npm run start```
 
 ## Run Servers
 
