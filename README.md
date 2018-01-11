@@ -7,7 +7,7 @@
 * You need NodeJs (min 4.2.6)
 * Go into client/whatCanIBuyWith and server/ and run npm install
 
-##### Other specification for the server (server/)
+##### Other specifications for the server (server/)
 
 * The server need a mysql database, so you have to create your own with the server/sql/create.sql file
 
@@ -48,13 +48,13 @@ Finally create your watcher :
 
 &nbsp;&nbsp;&nbsp;Settings->Tools->File Watchers
 
-* Create a babel watcher, choose our "source" scope for the scope;  
-* Select the Babel "program" in your system (/usr/local/bin/babel for linux);  
+* Create a babel watcher, choose our "source" scope for the scope  
+* Select the Babel "program" in your system (/usr/local/bin/babel for linux)  
 * In "Arguments" write :  
 ```$FileDirRelativeToProjectRoot$ --source-maps --out-dir server/dist/$FileDirPathFromParent(src)$```  
 
-* The "output paths to refresh" is : ```server/dist```;  
-* The "working directory" is : ```$ProjectFileDir$```;
+* The "output paths to refresh" is : ```server/dist```  
+* The "working directory" is : ```$ProjectFileDir$```
 
 ## Run Servers
 
