@@ -13,4 +13,9 @@ export class ApiService {
       return this.http.get(path);
   }
 
+  post(path: string, body) {
+
+    return this.http.post(path,body);
+  }
+
 }
