@@ -58,11 +58,11 @@ Finally create your watcher :
 
 ## Run Servers
 
-##### For the client (client/whatCanIBuyWith)
+##### For the client (client/whatCanIBuyWith/)
 
 This part use angular cli so to run it you just have to use ```ng serve``` (see the official documentation for others commands)
 
-##### For the client (client/whatCanIBuyWith)
+##### For the server (server/)
 
 To run the server use ```npm run start``` or use ```npm run watcherStart``` if you want that the server restart automaticly when a file change 
 
