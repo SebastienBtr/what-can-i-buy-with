@@ -48,12 +48,13 @@ Finally create your watcher :
 
 &nbsp;&nbsp;&nbsp;Settings->Tools->File Watchers
 
-&nbsp;&nbsp;&nbsp;Create a babel watcher, choose our "source" scope for the scope;  
-&nbsp;&nbsp;&nbsp;Select the Babel "program" in your system (/usr/local/bin/babel for linux)  
-&nbsp;&nbsp;&nbsp;In "Arguments" write :  
+* Create a babel watcher, choose our "source" scope for the scope;  
+* Select the Babel "program" in your system (/usr/local/bin/babel for linux);  
+* In "Arguments" write :  
 ```$FileDirRelativeToProjectRoot$ --source-maps --out-dir server/dist/$FileDirPathFromParent(src)$```  
-&nbsp;&nbsp;&nbsp;The "output paths to refresh" is : ```server/dist```  
-&nbsp;&nbsp;&nbsp;The "working directory" is : ```$ProjectFileDir$```
+
+* The "output paths to refresh" is : ```server/dist```;  
+* The "working directory" is : ```$ProjectFileDir$```;
 
 ## Run Servers
 
