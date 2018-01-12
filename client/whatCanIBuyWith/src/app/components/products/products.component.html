@@ -16,18 +16,21 @@
     <ul class="list-group">
       <li class="list-group-item margin-top-20 no-padding product-card" *ngFor="let product of productsSelected">
 
-        <div class="row">
-          <div class="col-sm-3">
-            <img class="product-picture" src="{{ product.imageUrl }}">
-          </div>
-          <div class="col-sm-9 text-center margin-top-20">
-            <h4><strong>{{ (priceSelected / product.price) | number : '1.0-0' }}</strong></h4>
-            <div *ngIf="(priceSelected / product.price) >= 2; else notPlurial">
-              <h4>{{ product.plurialName }}</h4>
+        <div class="col-md-12 no-padding">
+          <div class="row">
+            <div class="col-sm-3">
+              <img class="product-picture" src="{{ product.imageUrl }}">
             </div>
-            <ng-template #notPlurial><h4 >{{ product.name }}</h4></ng-template>
+            <div class="col-sm-9 text-center margin-top-20">
+              <h4><strong>{{ (priceSelected / product.price) | number : '1.0-0' }}</strong></h4>
+              <div *ngIf="(priceSelected / product.price) >= 2; else notPlurial">
+                <h4>{{ product.plurialName }}</h4>
+              </div>
+              <ng-template #notPlurial><h4 >{{ product.name }}</h4></ng-template>
+            </div>
           </div>
         </div>
+
 
       </li>
     </ul>
