@@ -1,23 +1,50 @@
-<form [formGroup]="priceForm">
-  <div>
-    <input type="text" formControlName="price">
+<div class="col-md-6 offset-md-3">
+
+  <div class="white">
+    <h1 class="text-center margin-top-20">You have money and you want to know what you can buy with ?</h1>
+    <form class="margin-top-50" [formGroup]="priceForm">
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="price" placeholder="Select your price">
+      </div>
+    </form>
   </div>
-</form>
 
-<div *ngIf="productsSelected.length > 0; else empty">
-  <h2>With ${{ priceSelected}} you can buy</h2>
-    <ul>
-      <li *ngFor="let product of productsSelected">
+  <div *ngIf="productsSelected.length > 0; else empty">
+    <div class="white">
+      <h2 class="text-center margin-top-50">With ${{ priceSelected}} you can buy</h2>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item margin-top-20 no-padding product-card" *ngFor="let product of productsSelected">
 
-        <img src="{{ product.imageUrl }}">
-        {{ (priceSelected / product.price) | number : '1.0-0' }} {{ product.name }}
+        <div class="row">
+          <div class="col-sm-3">
+            <img class="product-picture" src="{{ product.imageUrl }}">
+          </div>
+          <div class="col-sm-9 text-center margin-top-20">
+            <h4><strong>{{ (priceSelected / product.price) | number : '1.0-0' }}</strong></h4>
+            <div *ngIf="(priceSelected / product.price) >= 2; else notPlurial">
+              <h4>{{ product.plurialName }}</h4>
+            </div>
+            <ng-template #notPlurial><h4 >{{ product.name }}</h4></ng-template>
+          </div>
+        </div>
 
       </li>
     </ul>
+  </div>
+
+  <ng-template #empty>
+    <div class="row margin-top-50">
+      <div class="col-md-8 offset-md-2 text-center">
+        <div class="content">
+          <p class="text-muted">Sorry...</p>
+          <p class="text-muted">you don't have enough money to buy something</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
 </div>
 
-<ng-template #empty>
-  <h2>Sorry... you don't have enough money to buy something</h2>
-</ng-template>
 
 

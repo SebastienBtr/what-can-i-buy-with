@@ -4,7 +4,7 @@ var db = require('../db.js');
 
 module.exports.findAll = function (success, error) {
 
-    var query = 'SELECT * FROM product';
+    var query = 'SELECT * FROM product ORDER BY price';
 
     db.connection.query(query, function (err, rows) {
 
@@ -19,7 +19,7 @@ module.exports.findAll = function (success, error) {
 
 module.exports.findById = function (id, success, error) {
 
-    var query = 'SELECT * FROM product WHERE id = ?';
+    var query = 'SELECT * FROM product WHERE id = ? ORDER BY price';
 
     db.connection.query(query, [id], function (err, rows) {
 
