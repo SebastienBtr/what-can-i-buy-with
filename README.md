@@ -2,6 +2,8 @@
 
 ## Description
 
+Really small application that allows you enter a price and shows you a list of different objects and the quantity you can buy with your given price.
+
 ## Installation
 
 * You need NodeJs (min 4.2.6)
@@ -28,7 +30,7 @@
 }
 ```
 
-* src files are write in ES6 but for all browser support we use Babel as a transpiler. Before run the server you need to call the build script with npm or you can configure your Ide to do it automatically (if you don't know what is Babel please refer to the official documentation)
+* src files are write in ES6 but it uses Babel as a transpiler. Before run the server you need to call the build script with npm or you can configure your Ide to do it automatically (if you don't know what is Babel please refer to the official documentation)
 
 ##### Exemple for ide configuration with WebStorm :
 
@@ -64,6 +66,4 @@ This part use angular cli so to run it you just have to use ```ng serve``` (see 
 
 ##### For the server (server/)
 
-To run the server use ```npm run start``` or use ```npm run watcherStart``` if you want that the server restart automatically when a file change 
-
-## Test
+To run the server use ```npm run start``` or use ```npm run watcherStart``` if you want that the server restart automatically when a file change.
